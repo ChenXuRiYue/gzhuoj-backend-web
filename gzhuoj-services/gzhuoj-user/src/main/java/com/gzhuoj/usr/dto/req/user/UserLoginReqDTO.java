@@ -1,10 +1,11 @@
 package com.gzhuoj.usr.dto.req.user;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-public class
-UserLoginReqDTO {
+@Builder
+public class UserLoginReqDTO {
     /**
      *  用户账号
      */

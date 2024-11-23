@@ -47,6 +47,7 @@
         <spring-web.version>6.0.8</spring-web.version>
         <spring-boot-test.version>3.0.7</spring-boot-test.version>
         <junit-jupiter-api.version> 5.9.3</junit-jupiter-api.version>
+        <junit>4.12</junit>
     </properties>
 
     <dependencyManagement>
@@ -156,6 +157,12 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit-jupiter-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit}</version>
             </dependency>
 
         </dependencies>
