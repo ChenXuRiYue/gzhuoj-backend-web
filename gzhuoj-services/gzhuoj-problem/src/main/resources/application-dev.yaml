@@ -10,7 +10,7 @@ spring:
   cloud:
     ## consul 服务端治理设置
     consul:
-      host: 47.120.53.127
+      host: 47.113.150.187
       port: 8500
       discovery:
         ## 注册到consul的服务名称
@@ -20,14 +20,13 @@ spring:
         prefer-ip-address: true # 使用容器的外部IP地址进行注册
   data:
     redis:
-      host: 47.120.53.127
+      host: 47.113.150.187
       port: 6379
-      password: gzhuoj
   ## 数据库配置
   datasource:
     username: root
     password: 3.14PAi#!
-    url: jdbc:mysql://47.120.53.127:3307/gzhuoj-problem?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://47.113.150.187:3306/gzhuoj-problem?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       connection-test-query: select 1
