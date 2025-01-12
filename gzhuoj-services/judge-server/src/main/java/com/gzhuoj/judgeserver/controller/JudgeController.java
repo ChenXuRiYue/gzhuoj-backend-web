@@ -47,7 +47,7 @@ public class JudgeController {
             return BeanUtil.toBean(requestParam.getSubmitDTO(), SubmitDO.class);
         } catch (Exception e) {
             log.error("Error converting ToJudgeReqDTO to SubmitDO, ToJudgeReqDTO = {}", requestParam, e);
-            throw new ServiceException("Error converting request data.", JUDGE_PARAM_NOT_FOUND_ERROR);
+            throw new ServiceException("Error converting request testData.", JUDGE_PARAM_NOT_FOUND_ERROR);
         }
     }
 }

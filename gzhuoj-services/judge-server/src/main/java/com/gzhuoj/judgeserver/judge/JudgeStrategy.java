@@ -54,7 +54,7 @@ public class JudgeStrategy {
 
             // 当前工作目录
             Path absolutePath = Paths.get("").toAbsolutePath();
-            Path relativePath = Paths.get("data", "public", "problem", problemRespDTO.getAttach(), "test_case");
+            Path relativePath = Paths.get("testData", "public", "problem", problemRespDTO.getAttach(), "test_case");
             // test绝对路径
             Path testCasePath = absolutePath.resolve(relativePath);
             // 读取testCase目录下的每一个.in
@@ -148,7 +148,7 @@ public class JudgeStrategy {
         return DigestUtils.md5DigestAsHex(output.toString().getBytes(StandardCharsets.UTF_8));
     }
     public static void main(String[] args) {
-        Path path = Paths.get("C:\\Users\\11493\\Desktop\\GZHUOJ\\GZHUOJ-backend-java\\data\\public\\problem\\2024-08-17_C7ZK1B0PJ8S6NTIV\\test_case");
+        Path path = Paths.get("C:\\Users\\11493\\Desktop\\GZHUOJ\\GZHUOJ-backend-java\\testData\\public\\problem\\2024-08-17_C7ZK1B0PJ8S6NTIV\\test_case");
         if (Files.exists(path)){
             System.out.println("yes");
         }

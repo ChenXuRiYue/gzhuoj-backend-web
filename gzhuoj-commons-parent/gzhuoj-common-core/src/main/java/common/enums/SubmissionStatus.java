@@ -1,10 +1,11 @@
 package common.enums;
 
+import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @Getter
 public enum SubmissionStatus {
@@ -59,15 +60,21 @@ public enum SubmissionStatus {
     }
 
     static final Map<Integer, String> statusMap = new HashMap<>();
+    static final Map<Integer, SubmissionStatus> submissionStatusMap = new HashMap<>();
     static {
         for (SubmissionStatus submissionStatus : SubmissionStatus.values()) {
             if(submissionStatus.getCode() <= 7) {
                 statusMap.put(submissionStatus.getCode(), submissionStatus.getStatus());
+                submissionStatusMap.put(submissionStatus.getCode(), submissionStatus);
             }
         }
     }
 
     public static String getStatusStr(Integer code){
         return statusMap.get(code);
+    }
+
+    public static SubmissionStatus  getSubmissionStatusByCode(Integer code) {
+        return submissionStatusMap.get(code);
     }
 }

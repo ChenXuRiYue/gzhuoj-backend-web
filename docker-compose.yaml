@@ -8,7 +8,7 @@ services:
       - "8600:8600/udp"
     environment:
       - CONSUL_BIND_INTERFACE=eth0
-    command: agent -server -bootstrap -ui -client=0.0.0.0 -node=consul-server -bind=0.0.0.0 -data-dir=/consul/data
+    command: agent -server -bootstrap -ui -client=0.0.0.0 -node=consul-server -bind=0.0.0.0 -testData-dir=/consul/testData
     networks:
       gzhuoj-network:
         ipv4_address: 172.20.0.2
@@ -48,7 +48,7 @@ services:
     ports:
       - "8085:8085"
     volumes:
-      - /root/home/data:/w/data
+      - /root/home/testData:/w/testData
     environment:
       - GZHUOJ_CONTEST_IP=${GZHUOJ_CONTEST_IP:-172.20.0.5}
       - CONSUL_BIND_INTERFACE=eth0
@@ -70,7 +70,7 @@ services:
     ports:
       - "8086:8086"
     volumes:
-      - /root/home/data:/w/data
+      - /root/home/testData:/w/testData
     environment:
       - GZHUOJ_PROBLEM_IP=${GZHUOJ_PROBLEM_IP:-172.20.0.6}
       - CONSUL_BIND_INTERFACE=eth0
@@ -92,7 +92,7 @@ services:
     ports:
       - "8087:8087"
     volumes:
-      - /root/home/data:/w/data
+      - /root/home/testData:/w/testData
     environment:
       - GZHUOJ_USER_IP=${GZHUOJ_USER_IP:-172.20.0.7}
       - CONSUL_BIND_INTERFACE=eth0
@@ -114,7 +114,7 @@ services:
     ports:
       - "8088:8088"
     volumes:
-      - /root/home/data:/w/data
+      - /root/home/testData:/w/testData
     environment:
       - JUDGE_SERVER_IP=${JUDGE_SERVER_IP:-172.20.0.8}
       - CONSUL_BIND_INTERFACE=eth0
