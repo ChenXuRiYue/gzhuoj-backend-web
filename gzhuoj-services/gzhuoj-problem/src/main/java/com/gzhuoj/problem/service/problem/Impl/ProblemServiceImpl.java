@@ -106,7 +106,7 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, ProblemDO> im
                         .peek(each -> each.setProblemNum(requestParam.getProblemNum()))
                         .forEach(testExampleMapper::insert);
             }
-            // 创建题目时，在本地 data/public/problem 目录下创建可唯一标识的文件夹用于分别存储test_case和upload文件
+            // 创建题目时，在本地 testData/public/problem 目录下创建可唯一标识的文件夹用于分别存储test_case和upload文件
             // test_case 用于 judge
             // upload 用于题面展示
             // identify 文件夹唯一标识
@@ -280,8 +280,8 @@ public class ProblemServiceImpl extends ServiceImpl<ProblemMapper, ProblemDO> im
     @SneakyThrows
     public static void main(String[] args) {
         Path currentPath = Paths.get("").toAbsolutePath();
-        Path testCase = currentPath.resolve("data/public/problem/test_case");
-        Path upload = currentPath.resolve(String.format("data/public/problem/upload/%s", "ljc"));
+        Path testCase = currentPath.resolve("testData/public/problem/test_case");
+        Path upload = currentPath.resolve(String.format("testData/public/problem/upload/%s", "ljc"));
         Files.createDirectories(upload);
         System.out.println(testCase);
         System.out.println(upload);
